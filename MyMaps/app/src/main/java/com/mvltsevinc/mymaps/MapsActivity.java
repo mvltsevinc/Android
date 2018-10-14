@@ -13,10 +13,12 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -54,7 +56,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                System.out.println("Location:" + location.toString());
+                //System.out.println("Location:" + location.toString());
+                /*mMap.clear();
+                LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
+                mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location!"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,10));*/
             }
 
             @Override
@@ -79,7 +85,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
         }else{
             // izin var
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,50,locationListener);
+
+            // Son lokasyon alma
+            Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            LatLng userLastLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(userLastLocation).title("Your Location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLastLocation,10));
         }
         // üstteki ya da alttaki
         /*if(Build.VERSION.SDK_INT >= 23){
@@ -93,12 +105,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }else{
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
         }*/
-
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,10));
     }
 
     @Override
