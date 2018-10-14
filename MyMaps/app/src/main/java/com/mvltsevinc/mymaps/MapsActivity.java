@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,GoogleMap.OnMapLongClickListener {
 
     private GoogleMap mMap;
     private LocationManager locationManager;
@@ -67,17 +67,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
                 mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location!"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,10));*/
-
-                // Adresleri alma
-                Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
-                try {
-                    List<Address> addressList = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-                    if(addressList!=null && addressList.size() > 0) {
-                        System.out.println("Adres:" + addressList.get(0).toString());
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
 
             @Override
@@ -122,6 +111,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }else{
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
         }*/
+
+
+        mMap.setOnMapLongClickListener(this);
     }
 
     @Override
@@ -135,5 +127,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onMapLongClick(LatLng latLng) {
+        //System.out.println("LatLng:" + latLng.toString());
+        // Adresleri alma
+        mMap.clear();
+        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        String address = "";
+        try {
+            List<Address> addressList = geocoder.getFromLocation(latLng.latitude,latLng.longitude,1);
+            if(addressList != null && addressList.size() > 0){
+                if(addressList.get(0).getThoroughfare() !=null){
+                    address += addressList.get(0).getAddressLine(0).toString();
+                }
+            }
+            System.out.println("Tıklanan Adres:" + address);
+            mMap.addMarker(new MarkerOptions().position(latLng).title(address));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
