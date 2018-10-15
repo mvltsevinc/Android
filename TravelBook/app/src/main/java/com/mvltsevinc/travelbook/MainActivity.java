@@ -1,5 +1,6 @@
 package com.mvltsevinc.travelbook;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         // Menuden Secileni Alma
         if(item.getItemId() == R.id.add_place) {
             // Haritalara intent
+            Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
