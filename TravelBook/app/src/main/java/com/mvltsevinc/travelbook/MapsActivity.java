@@ -2,6 +2,7 @@ package com.mvltsevinc.travelbook;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,46 +50,58 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnMapLongClickListener(this);
-        locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                SharedPreferences sharedPreferences = MapsActivity.this.getSharedPreferences("com.mvltsevinc.travelbook",MODE_PRIVATE);
-                boolean firstTimeCheck = sharedPreferences.getBoolean("notFirstTime",false);
-                // Surekli konumu almamasi icin bunu yaptim.
-                if(!firstTimeCheck) {
-                    LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,10));
-                    System.out.println("Location" + location);
-                    sharedPreferences.edit().putBoolean("notFirstTime",true).apply();
+        Intent intent = getIntent();
+        String info = intent.getStringExtra("info");
+        if(info.matches("new")){
+            locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+            locationListener = new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    SharedPreferences sharedPreferences = MapsActivity.this.getSharedPreferences("com.mvltsevinc.travelbook",MODE_PRIVATE);
+                    boolean firstTimeCheck = sharedPreferences.getBoolean("notFirstTime",false);
+                    // Surekli konumu almamasi icin bunu yaptim.
+                    if(!firstTimeCheck) {
+                        LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,10));
+                        System.out.println("Location" + location);
+                        sharedPreferences.edit().putBoolean("notFirstTime",true).apply();
+                    }
                 }
-            }
 
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
 
-            }
+                }
 
-            @Override
-            public void onProviderEnabled(String provider) {
+                @Override
+                public void onProviderEnabled(String provider) {
 
-            }
+                }
 
-            @Override
-            public void onProviderDisabled(String provider) {
+                @Override
+                public void onProviderDisabled(String provider) {
 
-            }
-        };
+                }
+            };
 
-        /* Harita kullanımı icin izin alma */
-        if(Build.VERSION.SDK_INT >=23){
-            if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // izin yoksa
-                // izin iste
-                requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
+            /* Harita kullanımı icin izin alma */
+            if(Build.VERSION.SDK_INT >=23){
+                if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // izin yoksa
+                    // izin iste
+                    requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
+                }else{
+                    // izin varsa kullanıcın konumunu almaya basla
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,10000,20,locationListener);
+                    mMap.clear();
+                    Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if(lastLocation != null) {
+                        LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                    }
+                }
             }else{
-                // izin varsa kullanıcın konumunu almaya basla
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,10000,20,locationListener);
+                requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
                 mMap.clear();
                 Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 if(lastLocation != null) {
@@ -96,16 +109,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
                 }
             }
+            /* Harita kullanımı icin izin alma */
         }else{
-            requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
             mMap.clear();
-            Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if(lastLocation != null) {
-                LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
-            }
+            int position = intent.getIntExtra("position",0);
+            LatLng location = new LatLng(MainActivity.locations.get(position).latitude,MainActivity.locations.get(position).longitude);
+            String address = MainActivity.addresses.get(position);
+            mMap.addMarker(new MarkerOptions().title(address).position(location));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,10));
         }
-        /* Harita kullanımı icin izin alma */
+
+
     }
 
     /* Izin verilince calisan method */
@@ -117,18 +131,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 // izin verilince yapılacaklar
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
-                // Son lokasyonu alma
-                Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                if(lastLocation != null) {
-                    LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                Intent intent = getIntent();
+                String info = intent.getStringExtra("info");
+                if(info.matches("new")){
+                    // Son lokasyonu alma
+                    Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if(lastLocation != null) {
+                        LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                    }
+                }else{
+                    mMap.clear();
+                    int position = intent.getIntExtra("position",0);
+                    LatLng location = new LatLng(MainActivity.locations.get(position).latitude,MainActivity.locations.get(position).longitude);
+                    String address = MainActivity.addresses.get(position);
+                    mMap.addMarker(new MarkerOptions().title(address).position(location));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,10));
                 }
+
             }
         }
     }
     /* Izin verilince calisan method */
     @Override
     public void onMapLongClick(LatLng latLng) {
+        mMap.clear();
         Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
         String address = "";
         try {
@@ -145,6 +172,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.addMarker(new MarkerOptions().title(address).position(latLng));
         Toast.makeText(getApplicationContext(),"New Place Added!",Toast.LENGTH_LONG).show();
+
+        MainActivity.addresses.add(address);
+        MainActivity.locations.add(latLng);
+        MainActivity.arrayAdapter.notifyDataSetChanged(); // yeni eklenenleri ekranda guncellemesi icin
 
         // Adresi Db ye kaydet
         try {

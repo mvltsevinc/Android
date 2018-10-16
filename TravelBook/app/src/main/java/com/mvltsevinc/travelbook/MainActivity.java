@@ -2,12 +2,15 @@ package com.mvltsevinc.travelbook;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteStatement;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             int addressIx = cursor.getColumnIndex("name");
             int latIx = cursor.getColumnIndex("latitude");
             int lngIx = cursor.getColumnIndex("longitude");
-            
+
             while (cursor.moveToNext()){
                 String address = cursor.getString(addressIx);
                 String latitude = cursor.getString(latIx);
@@ -55,6 +58,32 @@ public class MainActivity extends AppCompatActivity {
 
         arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,addresses);
         listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
+                intent.putExtra("position",position);
+                intent.putExtra("info","old");
+                startActivity(intent);
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Double lat = Double.parseDouble(String.valueOf(locations.get(position).latitude));
+                Double lng = Double.parseDouble(String.valueOf(locations.get(position).longitude));
+                String sql = "DELETE FROM places WHERE latitude=? AND longitude=?";
+                SQLiteStatement sqLiteStatement = MapsActivity.database.compileStatement(sql);
+                sqLiteStatement.bindString(1,lat.toString());
+                sqLiteStatement.bindString(2,lng.toString());
+                sqLiteStatement.execute();
+                addresses.remove(position);
+                locations.remove(position);
+                arrayAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 
     /* MENU BAGLAMA ICIN OVERRIDE EDILMESI GEREKEN METHODLAR*/
@@ -71,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.add_place) {
             // Haritalara intent
             Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
+            intent.putExtra("info","new");
             startActivity(intent);
         }
 
