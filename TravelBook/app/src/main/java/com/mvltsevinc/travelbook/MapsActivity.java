@@ -80,15 +80,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,10000,20,locationListener);
                 mMap.clear();
                 Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                if(lastLocation != null) {
+                    LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                }
             }
         }else{
             requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},1);
             mMap.clear();
             Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+            if(lastLocation != null) {
+                LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+            }
         }
         /* Harita kullanımı icin izin alma */
     }
@@ -102,7 +106,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 // izin verilince yapılacaklar
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
-
+                // Son lokasyonu alma
+                Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if(lastLocation != null) {
+                    LatLng lastUserLocation = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastUserLocation,10));
+                }
             }
         }
     }
