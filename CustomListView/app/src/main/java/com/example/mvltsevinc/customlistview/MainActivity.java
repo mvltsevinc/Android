@@ -6,6 +6,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+
+/*
+* ListView daki imageların hızlı yuklenmesi icin universal image loader kullanıldı
+* */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     
@@ -15,23 +20,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listView = findViewById(R.id.listView);
-        Person person1 = new Person("AAAA","12-12-2019","Male");
-        Person person2 = new Person("AAAA","12-12-2019","Male");
-        Person person3 = new Person("AAAA","12-12-2019","Male");
-        Person person4 = new Person("AAAA","12-12-2019","Male");
-        Person person5 = new Person("AAAA","12-12-2019","Male");
-        Person person6 = new Person("AAAA","12-12-2019","Male");
-        Person person7 = new Person("AAAA","12-12-2019","Male");
-        Person person8 = new Person("AAAA","12-12-2019","Male");
-        Person person9 = new Person("AAAA","12-12-2019","Male");
-        Person person11 = new Person("AAAA","12-12-2019","Male");
-        Person person22 = new Person("AAAA","12-12-2019","Male");
-        Person person33 = new Person("AAAA","12-12-2019","Male");
-        Person person44 = new Person("AAAA","12-12-2019","Male");
-        Person person55 = new Person("AAAA","12-12-2019","Male");
-        Person person66= new Person("AAAA","12-12-2019","Male");
-        Person person77 = new Person("AAAA","12-12-2019","Male");
-        Person person88 = new Person("AAAA","12-12-2019","Male");
+        Person person1 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person2 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person3 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person4 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person5 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person6 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.plus);
+        Person person7 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person8 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person9 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person11 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person22 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person33 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person44 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person55 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person66= new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person77 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
+        Person person88 = new Person("AAAA","12-12-2019","Male","drawable://" + R.drawable.settings);
 
         ArrayList<Person> personList = new ArrayList<Person>();
         personList.add(person1);
