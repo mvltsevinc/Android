@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_android"
         android:title="Android"></item>
     <item
-        android:id="@+id/ic_action_music"
+        android:id="@+id/ic_books"
         android:icon="@drawable/ic_library_books"
         android:title="Books"></item>
     <item
