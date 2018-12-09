@@ -52,59 +52,13 @@
             android:id="@+id/relLayoutBottomBar"
             android:layout_alignParentBottom="true">
 
-            <android.support.design.widget.AppBarLayout
+            <android.support.design.widget.BottomNavigationView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@drawable/white_gray_border_top">
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbarBottom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_marginRight="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:weightSum="100">
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:src="@drawable/ic_arrow_back"/>
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:src="@drawable/ic_android"/>
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:src="@drawable/ic_library_books"/>
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:src="@drawable/ic_center_focus"/>
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:src="@drawable/ic_backup"/>
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.Toolbar>
-            </android.support.design.widget.AppBarLayout>
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavViewBar"
+                android:background="@drawable/white_gray_border_top"
+                app:menu="@menu/bottom_navigation_menu"
+                ></android.support.design.widget.BottomNavigationView>
 
         </RelativeLayout>
 
