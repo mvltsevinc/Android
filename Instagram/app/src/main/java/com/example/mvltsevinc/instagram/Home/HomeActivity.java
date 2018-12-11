@@ -1,4 +1,4 @@
-package com.example.mvltsevinc.instagram;
+package com.example.mvltsevinc.instagram.Home;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -6,19 +6,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.Utils.BottomNavigationViewHelper;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-public class ShareActivity extends AppCompatActivity {
-    private static final String TAG = "ShareActivity";
-    private static final int ACTIVITY_NUM = 2;
+public class HomeActivity extends AppCompatActivity {
+    private static final String TAG = "HomeActivity";
+    private static final int ACTIVITY_NUM = 0;
 
-    private Context mContext = ShareActivity.this;
+    private Context mContext = HomeActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_share);
+        setContentView(R.layout.activity_home);
 
         setupBottomNavigationView();
     }

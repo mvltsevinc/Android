@@ -6,12 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 
-import com.example.mvltsevinc.instagram.HomeActivity;
-import com.example.mvltsevinc.instagram.LikesActivity;
-import com.example.mvltsevinc.instagram.ProfileActivity;
+import com.example.mvltsevinc.instagram.Home.HomeActivity;
+import com.example.mvltsevinc.instagram.Likes.LikesActivity;
+import com.example.mvltsevinc.instagram.Profile.ProfileActivity;
 import com.example.mvltsevinc.instagram.R;
-import com.example.mvltsevinc.instagram.SearchActivity;
-import com.example.mvltsevinc.instagram.ShareActivity;
+import com.example.mvltsevinc.instagram.Search.SearchActivity;
+import com.example.mvltsevinc.instagram.Share.ShareActivity;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class BottomNavigationViewHelper {
