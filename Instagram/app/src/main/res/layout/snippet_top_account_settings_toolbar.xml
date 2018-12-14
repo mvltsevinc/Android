@@ -13,28 +13,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mvltsevinc"
-                    android:textSize="20sp"
-                    android:textColor="@color/colorBlack"
-                    android:layout_marginStart="10dp"
-                    android:id="@+id/profileName"
-                    android:textStyle="bold"/>
-
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_centerVertical="true"
-                    android:id="@+id/profileMenu"
-                    android:src="@drawable/ic_ellipses"/>
+                    android:id="@+id/backArrow"
+                    android:src="@drawable/ic_arrow_back"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/backArrow"
+                    android:text="Options"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/profileName"/>
 
             </RelativeLayout>
-            
+
 
 
         </android.support.v7.widget.Toolbar>
