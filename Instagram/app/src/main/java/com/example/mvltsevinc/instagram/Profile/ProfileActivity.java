@@ -3,8 +3,10 @@ package com.example.mvltsevinc.instagram.Profile;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.Utils.BottomNavigationViewHelper;
@@ -19,9 +21,35 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_profile);
 
-        setupBottomNavigationView();
+        //setupBottomNavigationView();
+        setupToolbar();
+    }
+
+    private void setupToolbar(){
+        Toolbar toolbar = findViewById(R.id.profileToolbar);
+        //Sets the Toolbar to act as the ActionBar
+        setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.profileMenu:
+                        Toast.makeText(mContext, "Profile", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.profile_menu,menu);
+        return true;
     }
 
     /**
