@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.mvltsevinc.instagram.R;
@@ -22,10 +23,15 @@ public class ProfileActivity extends AppCompatActivity {
 
     private Context mContext = ProfileActivity.this;
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        progressBar = findViewById(R.id.profileProgressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
         setupBottomNavigationView();
         setupToolbar();
