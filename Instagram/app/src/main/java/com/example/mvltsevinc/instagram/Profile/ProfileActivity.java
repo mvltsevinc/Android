@@ -9,13 +9,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.Utils.BottomNavigationViewHelper;
+import com.example.mvltsevinc.instagram.Utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
@@ -24,17 +28,34 @@ public class ProfileActivity extends AppCompatActivity {
     private Context mContext = ProfileActivity.this;
 
     private ProgressBar progressBar;
+    private ImageView profilePhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        progressBar = findViewById(R.id.profileProgressBar);
-        progressBar.setVisibility(View.INVISIBLE);
+        setupActivityWidgets();
+        setProfileImage();
 
         setupBottomNavigationView();
         setupToolbar();
+    }
+
+    private void setupImageGrid(ArrayList<String> imgURLs){
+        GridView gridView = findViewById(R.id.gridView);
+    }
+
+    private void setProfileImage(){
+        String imgURL = "www.pngarts.com/files/4/Android-PNG-Picture.png";
+        UniversalImageLoader.setImage(imgURL,profilePhoto,null,"https://");
+    }
+
+    private void setupActivityWidgets(){
+        progressBar = findViewById(R.id.profileProgressBar);
+        progressBar.setVisibility(View.INVISIBLE);
+        profilePhoto = findViewById(R.id.profile_photo);
+
     }
 
     private void setupToolbar(){

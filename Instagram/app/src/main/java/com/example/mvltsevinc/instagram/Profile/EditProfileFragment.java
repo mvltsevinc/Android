@@ -25,15 +25,19 @@ public class EditProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_edit_profile,container,false);
 
-        initImageLoader();
         profilePhoto = view.findViewById(R.id.profile_photo);
         setProfilePhoto();
-        return view;
-    }
 
-    private void initImageLoader() {
-        UniversalImageLoader universalImageLoader = new UniversalImageLoader(getActivity());
-        ImageLoader.getInstance().init(universalImageLoader.getConfig());
+        // back arrow for navigating back to profile activity
+        ImageView backArrow = view.findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+
+        return view;
     }
 
     private void setProfilePhoto(){
