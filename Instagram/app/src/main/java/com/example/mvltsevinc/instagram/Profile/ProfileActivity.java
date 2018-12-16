@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.Utils.BottomNavigationViewHelper;
+import com.example.mvltsevinc.instagram.Utils.GridImageAdapter;
 import com.example.mvltsevinc.instagram.Utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -35,6 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        tempGridSetup();
         setupActivityWidgets();
         setProfileImage();
 
@@ -42,8 +45,36 @@ public class ProfileActivity extends AppCompatActivity {
         setupToolbar();
     }
 
+    private void tempGridSetup(){
+        ArrayList<String> imgURLs = new ArrayList<String>();
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+        imgURLs.add("https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg");
+
+        setupImageGrid(imgURLs);
+    }
+
     private void setupImageGrid(ArrayList<String> imgURLs){
         GridView gridView = findViewById(R.id.gridView);
+
+        GridImageAdapter adapter = new GridImageAdapter(mContext,R.layout.layout_grid_imageview,"",imgURLs);
+        gridView.setAdapter(adapter);
     }
 
     private void setProfileImage(){
