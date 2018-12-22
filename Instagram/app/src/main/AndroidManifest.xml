@@ -23,6 +23,8 @@
         <activity android:name=".Likes.LikesActivity" />
         <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".Profile.AccountSettingsActivity"></activity>
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".Login.RegisterActivity"></activity>
     </application>
 
 </manifest>
