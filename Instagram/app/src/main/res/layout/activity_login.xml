@@ -81,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Loading"
+        android:id="@+id/loginLoadingText"
         android:textColor="@color/colorBlack"
         android:textSize="16dp"
         android:layout_below="@+id/loginLoadingProgressBar"
