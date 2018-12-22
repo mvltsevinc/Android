@@ -91,9 +91,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                         mProgressBar.setVisibility(View.GONE);
                                         mPleaseWait.setVisibility(View.GONE);
-                                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                                        startActivity(intent);
-
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -110,6 +107,24 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        TextView linkSignUp = findViewById(R.id.link_signup);
+        linkSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        if the user logged in then navigate the home activity
+         */
+        if(mAuth.getCurrentUser() != null){
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     /**
