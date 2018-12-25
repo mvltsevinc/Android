@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Instagram</string>
+
+    <!-- fragment names -->
     <string name="edit_profile_fragment">Edit Profile</string>
     <string name="sign_out_fragment">Sign Out</string>
 
     <!-- Firebase Messages -->
     <string name="auth_failed">Authentication failed</string>
     <string name="auth_success">Authentication Success</string>
+
+    <!-- Firebase Database Fields-->
+    <string name="dbname_user">users</string>
+    <string name="dbname_user_account_settings">user_account_settings</string>
 </resources>

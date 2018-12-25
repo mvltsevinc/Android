@@ -133,7 +133,6 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                             // add new user to the database
 
-                            // add new user_account_settings to the database
                         }
 
                         @Override

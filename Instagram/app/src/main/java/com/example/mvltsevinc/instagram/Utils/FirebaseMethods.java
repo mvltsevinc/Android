@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -12,6 +13,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseMethods {
     private static final String TAG = "FirebaseMethods";
@@ -19,6 +22,8 @@ public class FirebaseMethods {
     //Firebase
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
     private String userID;
 
     private Context mContext;
@@ -26,6 +31,8 @@ public class FirebaseMethods {
     public FirebaseMethods(Context context) {
         mContext = context;
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
 
         if(mAuth.getCurrentUser() != null){
             userID = mAuth.getCurrentUser().getUid();
@@ -70,5 +77,16 @@ public class FirebaseMethods {
                         }
                     }
                 });
+    }
+
+    /*
+    Add new user to firebase database
+     */
+    public void addNewUser(String email,String username,String description,String website,String profile_photo){
+        User user= new User(email,userID,StringManipulation.condenseUsername(username),1);
+
+        myRef.child(mContext.getString(R.string.dbname_user))
+                .child(userID)
+                .setValue(user);
     }
 }
