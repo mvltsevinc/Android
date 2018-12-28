@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.example.mvltsevinc.instagram.R;
 import com.example.mvltsevinc.instagram.models.User;
+import com.example.mvltsevinc.instagram.models.UserAccountSettings;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -43,7 +44,7 @@ public class FirebaseMethods {
         Log.d(TAG, "checkIfUsernameExists: checking username if already exists");
 
         User user = new User();
-        for(DataSnapshot ds: dataSnapshot.getChildren()){
+        for(DataSnapshot ds: dataSnapshot.child(userID).getChildren()){
             Log.d(TAG, "checkIfUsernameExists: datasnapshot" + ds);
 
             user.setUsername(ds.getValue(User.class).getUsername());
@@ -88,5 +89,12 @@ public class FirebaseMethods {
         myRef.child(mContext.getString(R.string.dbname_user))
                 .child(userID)
                 .setValue(user);
+
+        UserAccountSettings settings = new UserAccountSettings(description,username,0,0,0,profile_photo,username,website);
+
+        myRef.child(mContext.getString(R.string.dbname_user_account_settings))
+                .child(userID)
+                .setValue(settings);
+
     }
 }
