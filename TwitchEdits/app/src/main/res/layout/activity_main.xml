@@ -1,40 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        class="com.example.mvltsevinc.twitchedits.VideoListFragment"
-        android:id="@+id/list_fragment"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="0dp"
-        android:divider="@null"/>
+        android:id="@+id/relLayout"
+        android:layout_marginBottom="50dp">
 
-    <LinearLayout
-        android:id="@+id/video_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/close_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/btn_dialog"
-            android:onClick="onClickClose"/>
-
-        <fragment
-            class="com.example.mvltsevinc.twitchedits.VideoFragment"
-            android:id="@+id/video_fragment_container"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:id="@+id/layout_frame">
+            <fragment
+                class="com.example.mvltsevinc.twitchedits.VideoListFragment"
+                android:id="@+id/list_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0dp"
+                android:divider="@null"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/video_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
 
-</FrameLayout>
+                <ImageButton
+                    android:id="@+id/close_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@android:drawable/btn_dialog"
+                    android:onClick="onClickClose"/>
+
+                <fragment
+                    class="com.example.mvltsevinc.twitchedits.VideoFragment"
+                    android:id="@+id/video_fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/relLayoutBottomBar"
+        android:layout_alignParentBottom="true">
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bottomNavViewBar"
+            android:background="@drawable/white_gray_border_top"
+            app:menu="@menu/bottom_navigation_menu"
+            ></android.support.design.widget.BottomNavigationView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

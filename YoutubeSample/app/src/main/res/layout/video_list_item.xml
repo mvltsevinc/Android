@@ -18,8 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="95dp"
     android:orientation="horizontal"
-    android:gravity="center"
-    android:background="?android:attr/activatedBackgroundIndicator">
+    android:gravity="center">
 
   <com.google.android.youtube.player.YouTubeThumbnailView
       android:id="@+id/thumbnail"

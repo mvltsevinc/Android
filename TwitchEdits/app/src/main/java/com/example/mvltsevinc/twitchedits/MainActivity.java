@@ -6,10 +6,13 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
@@ -49,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupBottomNavigationView();
+
         /*
             Youtube video list
          */
@@ -65,6 +70,30 @@ public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnF
     }
 
 
+    private void setupBottomNavigationView(){
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavViewBar);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.ic_home:
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    case  R.id.ic_top100:
+                        //Intent intent1 = new Intent(getApplicationContext(),ActivityOne.class);
+                        //startActivity(intent1);
+                        break;
+                    case    R.id.ic_profile:
+                        //Intent intent2 = new Intent(getApplicationContext(),ActivityTwo.class);
+                        //startActivity(intent2);
+                        break;
+                }
+
+                return false;
+            }
+        });
+    }
 
     /*
     Youtube functions

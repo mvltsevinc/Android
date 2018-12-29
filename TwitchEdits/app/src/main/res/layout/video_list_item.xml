@@ -5,18 +5,17 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="?android:attr/activatedBackgroundIndicator">
+    android:gravity="center">
 
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="235dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="8dp">
 
         <RelativeLayout
@@ -26,7 +25,7 @@
             <com.google.android.youtube.player.YouTubeThumbnailView
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="150dp"
                 android:src="@drawable/no_thumbnail"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>
@@ -36,11 +35,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/thumbnail"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="14dp"
                 android:paddingRight="16dp"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:text="asdasdas"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/text"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150.000 Görüntülenme"
+                        android:layout_marginTop="2dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_favorite"
+                        android:src="@drawable/ic_favorite"
+                        android:layout_toLeftOf="@+id/img_share"
+                        android:layout_marginRight="14dp"
+                        android:layout_centerVertical="true" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_share"
+                        android:id="@+id/img_share"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/img_comment"
+                        android:layout_marginRight="14dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_comment"
+                        android:src="@drawable/ic_comment"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
 
 
         </RelativeLayout>

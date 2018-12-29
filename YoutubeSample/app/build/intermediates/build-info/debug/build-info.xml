@@ -5,27 +5,26 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="FIELD_TYPE_CHANGE"
     plugin-version="3.2.1"
-    timestamp="1546086630454"
+    timestamp="1546108174670"
     token="-8839908981736014720"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2206" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1576" />
+        duration="0" />
     <task
         name="verifier"
-        duration="180" />
+        duration="0" />
 
     <artifact
-        location="C:\repos\Android\YoutubeSample\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        location="C:\repos\Android\YoutubeSample\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
 
     <build
@@ -79,6 +78,14 @@
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\repos\Android\YoutubeSample\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1546108174670"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\repos\Android\YoutubeSample\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
     </build>
 
