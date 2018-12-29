@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_video_list_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\video_list_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_demo_home.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\demo_home.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout-land_playerview_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout-land\\playerview_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout-land_fragments_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout-land\\fragments_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_list_item.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_action_bar_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\action_bar_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_loading_thumbnail.png.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\drawable-mdpi\\loading_thumbnail.png"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_no_thumbnail.png.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\drawable-mdpi\\no_thumbnail.png"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_fullscreen_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\fullscreen_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_player_controls_container.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\player_controls_container.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout-land_player_controls_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout-land\\player_controls_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_fragments_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\fragments_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_intents_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\intents_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_player_controls_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\player_controls_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_standalone_player_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\standalone_player_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_playerview_demo.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\playerview_demo.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\YoutubeSample\\app\\build\\intermediates\\res\\merged\\release\\layout_video_list_item.xml.flat",
+        "source": "C:\\repos\\Android\\YoutubeSample\\app\\src\\main\\res\\layout\\video_list_item.xml"
+    }
+]
