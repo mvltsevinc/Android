@@ -27,12 +27,6 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnFullscreenListener {
 
-    /*
-        For tabs
-    */
-    SectionsPagerAdapter sectionsPageAdapter;
-    private ViewPager viewPager;
-
     /** The duration of the animation sliding up the video in portrait. */
     private static final int ANIMATION_DURATION_MILLIS = 300;
     /** The padding between the video list and the video in landscape orientation. */
@@ -50,13 +44,10 @@ public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnF
     private boolean isFullscreen;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        setupTabs();
 
         /*
             Youtube video list
@@ -74,19 +65,6 @@ public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnF
     }
 
 
-    private void setupTabs(){
-        sectionsPageAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        viewPager = findViewById(R.id.container);
-        setupPager(viewPager);
-    }
-
-    private void setupPager(ViewPager viewPager){
-        SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DailyVideoFragment(),"Günlük");
-        adapter.addFragment(new WeeklyVideoFragment(),"Haftalık");
-        adapter.addFragment(new MonthlyVideoFragment(),"Aylık");
-        viewPager.setAdapter(adapter);
-    }
 
     /*
     Youtube functions
