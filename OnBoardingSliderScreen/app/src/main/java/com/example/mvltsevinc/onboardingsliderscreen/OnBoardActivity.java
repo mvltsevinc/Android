@@ -55,6 +55,11 @@ public class OnBoardActivity extends TutorialActivity {
     }
 
     @Override
+    public void finishTutorial() {
+        // Your implementation
+    }
+
+    @Override
     public void currentFragmentPosition(int i) {
 
     }
