@@ -3,7 +3,7 @@
     <item android:drawable="@drawable/gradient_background"/>
     <!-- Your product logo - 144dp color version of your app icon -->
 
-
+<!--test-->
     <item
         android:width="200dp"
         android:height="200dp"
