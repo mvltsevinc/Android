@@ -1,18 +1,16 @@
 package com.example.mvltsevinc.choiceapp;
 
-import android.os.CountDownTimer;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mvltsevinc.choiceapp.Util.ProgressBarAnimation;
-import com.ramotion.fluidslider.FluidSlider;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";

@@ -20,7 +20,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="12dp"
-            app:cardBackgroundColor="@color/colorYellow"
+            app:cardBackgroundColor="@color/colorGreen"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp"
             android:foreground="?android:attr/selectableItemBackground"
@@ -32,7 +32,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_margin="5dp"
-                app:cardBackgroundColor="#1D2747">
+                app:cardBackgroundColor="@color/colorCard">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                         android:id="@+id/progressTextA"
                         android:text=""
                         android:textSize="16sp"
-                        android:textColor="#fff"
+                        android:textColor="@color/colorAccent"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_alignParentBottom="true"
@@ -87,7 +87,7 @@
             android:layout_marginBottom="8dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
-            app:cardBackgroundColor="@color/colorYellow"
+            app:cardBackgroundColor="@color/colorRed"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true">
 
@@ -96,7 +96,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="#1D2747">
+                app:cardBackgroundColor="@color/colorCard">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -117,7 +117,7 @@
                         android:id="@+id/progressTextB"
                         android:textSize="16sp"
                         android:text=""
-                        android:textColor="#fff"
+                        android:textColor="@color/colorAccent"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"
                         android:layout_alignParentBottom="true"
