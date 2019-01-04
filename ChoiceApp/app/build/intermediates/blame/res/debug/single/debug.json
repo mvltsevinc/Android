@@ -544,12 +544,12 @@
         "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_background.xml.flat",
         "source": "C:\\repos\\Android\\ChoiceApp\\app\\src\\main\\res\\drawable\\splash_background.xml"
+    },
+    {
+        "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -756,12 +756,12 @@
         "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logo.png.flat",
         "source": "C:\\repos\\Android\\ChoiceApp\\app\\src\\main\\res\\drawable\\ic_logo.png"
+    },
+    {
+        "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a4e83a01639e35353041a06d5ccb68b8\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_small_material.xml.flat",
