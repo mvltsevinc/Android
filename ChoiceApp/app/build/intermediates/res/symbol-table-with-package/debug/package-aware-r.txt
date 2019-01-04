@@ -400,6 +400,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorYellow
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -701,6 +702,8 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id cardA
+id cardB
 id center
 id center_horizontal
 id center_vertical

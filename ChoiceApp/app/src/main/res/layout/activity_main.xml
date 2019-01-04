@@ -16,45 +16,70 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:id="@+id/cardA"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardBackgroundColor="#1D2747"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/colorYellow"
             app:cardCornerRadius="10dp"
-            android:padding="10dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true">
 
-            <TextView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Darth Wader mı?"
-                android:textColor="@color/colorAccent"
-                android:textSize="20dp"
-                android:gravity="center_vertical"
-                android:textAlignment="center"/>
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="#1D2747">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Darth Wader mı?"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"/>
+
+            </android.support.v7.widget.CardView>
+
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:id="@+id/cardB"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            app:cardBackgroundColor="#1D2747"
             app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/colorYellow"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true">
 
-            <TextView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Kylo Ren mi?"
-                android:textColor="@color/colorAccent"
-                android:textSize="20dp"
-                android:gravity="center_vertical"
-                android:textAlignment="center"/>
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="#1D2747">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Kylo Ren mi?"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"/>
+
+
+            </android.support.v7.widget.CardView>
 
         </android.support.v7.widget.CardView>
 
