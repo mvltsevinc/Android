@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mvltsevinc\\Desktop\\Mobil\\ChoiceApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
+            "outputFile": "C:\\repos\\Android\\ChoiceApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mvltsevinc\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\e405e541b4f9fa6d27ec5ccb46a5ccbd\\res\\values-en-rIN\\values-en-rIN.xml",
