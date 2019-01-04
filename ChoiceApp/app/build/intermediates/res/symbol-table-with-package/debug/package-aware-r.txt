@@ -66,9 +66,13 @@ attr backgroundStacked
 attr backgroundTint
 attr backgroundTintMode
 attr barLength
+attr bar_color
+attr bar_text_color
 attr barrierAllowsGoneWidgets
 attr barrierDirection
 attr borderlessButtonStyle
+attr bubble_color
+attr bubble_text_color
 attr buttonBarButtonStyle
 attr buttonBarNegativeButtonStyle
 attr buttonBarNeutralButtonStyle
@@ -138,11 +142,13 @@ attr drawableSize
 attr drawerArrowStyle
 attr dropDownListViewStyle
 attr dropdownListPreferredItemHeight
+attr duration
 attr editTextBackground
 attr editTextColor
 attr editTextStyle
 attr elevation
 attr emptyVisibility
+attr end_text
 attr expandActivityOverflowButtonDrawable
 attr firstBaselineToTopHeight
 attr font
@@ -169,6 +175,7 @@ attr iconifiedByDefault
 attr imageButtonStyle
 attr indeterminateProgressStyle
 attr initialActivityCount
+attr initial_position
 attr isLightTheme
 attr itemPadding
 attr keylines
@@ -282,11 +289,13 @@ attr showDividers
 attr showText
 attr showTitle
 attr singleChoiceItemLayout
+attr size
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
 attr splitTrack
 attr srcCompat
+attr start_text
 attr state_above_anchor
 attr statusBarBackground
 attr subMenuArrow
@@ -311,6 +320,7 @@ attr textAppearanceSearchResultTitle
 attr textAppearanceSmallPopupMenu
 attr textColorAlertDialogListItem
 attr textColorSearchUrl
+attr text_size
 attr theme
 attr thickness
 attr thumbTextPadding
@@ -760,6 +770,10 @@ id packed
 id parent
 id parentPanel
 id percent
+id progressBarA
+id progressBarB
+id progressTextA
+id progressTextB
 id progress_circular
 id progress_horizontal
 id radio
@@ -785,6 +799,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id small
 id spacer
 id split_action_bar
 id spread
@@ -1281,6 +1296,7 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable FluidSlider bar_color bar_text_color bubble_color bubble_text_color duration end_text initial_position size start_text text_size
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY

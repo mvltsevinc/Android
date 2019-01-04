@@ -34,14 +34,43 @@
                 android:layout_margin="5dp"
                 app:cardBackgroundColor="#1D2747">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Darth Wader mı?"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20dp"
-                    android:gravity="center_vertical"
-                    android:textAlignment="center"/>
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Darth Wader mı?"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressTextA"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textColor="#fff"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="35dp"/>
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBarA"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:scaleY="6"/>
+
+                </RelativeLayout>
+
+
 
             </android.support.v7.widget.CardView>
 
@@ -69,14 +98,41 @@
                 app:cardCornerRadius="10dp"
                 app:cardBackgroundColor="#1D2747">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Kylo Ren mi?"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20dp"
-                    android:gravity="center_vertical"
-                    android:textAlignment="center"/>
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Kylo Ren mi?"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressTextB"
+                        android:textSize="16sp"
+                        android:text=""
+                        android:textColor="#fff"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="35dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressBarB"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:scaleY="6"/>
+
+
+                </RelativeLayout>
 
 
             </android.support.v7.widget.CardView>
