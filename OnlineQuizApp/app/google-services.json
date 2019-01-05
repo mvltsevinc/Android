@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "398879716913",
+    "firebase_url": "https://fir-demo-7c75a.firebaseio.com",
+    "project_id": "fir-demo-7c75a",
+    "storage_bucket": "fir-demo-7c75a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398879716913:android:b0997ee8cff08bba",
+        "android_client_info": {
+          "package_name": "com.example.mvltsevinc.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398879716913-na4nd82d2qs067bbjenror8756grjdnb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mvltsevinc.firebaseapp",
+            "certificate_hash": "fd78e180aa4b9b1df5d154134bab4a5f88a4b263"
+          }
+        },
+        {
+          "client_id": "398879716913-4lu4i0asf4enrq06pr2a8cetasj57g87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-BtkV7ZCXpIi53UH-TVhidU66-8gEEaY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398879716913-4lu4i0asf4enrq06pr2a8cetasj57g87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398879716913:android:91564ae070eb8c7e",
+        "android_client_info": {
+          "package_name": "com.example.mvltsevinc.onlinequizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398879716913-3nkfubhrij6t698pcijufi64j4vgtqdb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mvltsevinc.onlinequizapp",
+            "certificate_hash": "a7be1688deacdfd0a03f04d3aee8511df73c1b84"
+          }
+        },
+        {
+          "client_id": "398879716913-4lu4i0asf4enrq06pr2a8cetasj57g87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-BtkV7ZCXpIi53UH-TVhidU66-8gEEaY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398879716913-4lu4i0asf4enrq06pr2a8cetasj57g87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
