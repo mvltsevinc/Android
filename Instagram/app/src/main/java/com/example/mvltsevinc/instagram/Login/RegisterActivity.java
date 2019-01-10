@@ -70,8 +70,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }else{
                     firebaseMethods.registerNewEmail(email,password,username);
+                    // username icin kontrol setupFirebaseAuth() metodunda
                 }
-
 
                 mProgressBar.setVisibility(View.GONE);
                 mPleaseWait.setVisibility(View.GONE);

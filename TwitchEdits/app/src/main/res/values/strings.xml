@@ -1,5 +1,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">TwitchEdits</string>
+
+    <!-- Firebase Messages -->
+    <string name="auth_failed">Authentication failed</string>
+    <string name="auth_success">Authentication Success</string>
+
+    <!-- Firebase Database Fields-->
+    <string name="dbname_user">users</string>
+
+
+    <!-- Youtube -->
     <string name="youtube_api_demo">YouTube API Demos</string>
 
     <string name="videowall_demo_name">Video Wall</string>
