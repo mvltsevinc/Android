@@ -38,6 +38,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     //Firebase database
     implementation 'com.google.firebase:firebase-database:16.0.1'
+    //AwesomeAppBar
+    implementation 'com.github.florent37:awesomebar:1.0.3'
 }
 
 apply plugin: 'com.google.gms.google-services'
