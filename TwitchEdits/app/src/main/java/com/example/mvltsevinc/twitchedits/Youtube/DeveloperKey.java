@@ -1,4 +1,4 @@
-package com.example.mvltsevinc.twitchedits;
+package com.example.mvltsevinc.twitchedits.Youtube;
 
 /**
  * Static container class for holding a reference to your YouTube Developer Key.

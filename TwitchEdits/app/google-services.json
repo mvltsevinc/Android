@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "698995697007",
+    "firebase_url": "https://twitchedits-223715.firebaseio.com",
+    "project_id": "twitchedits-223715",
+    "storage_bucket": "twitchedits-223715.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698995697007:android:f3c7c86773f4dc9b",
+        "android_client_info": {
+          "package_name": "com.example.mvltsevinc.twitchedits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698995697007-igsv3mhtgqipf9r6k3qet7lvalvsm6g8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mvltsevinc.twitchedits",
+            "certificate_hash": "a7be1688deacdfd0a03f04d3aee8511df73c1b84"
+          }
+        },
+        {
+          "client_id": "698995697007-0qguegepjen1e6rs2lcmoqjqr5k2eji3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSIf9ZQlkcNav0XgKCE6EOGky5reEbHh0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698995697007-0qguegepjen1e6rs2lcmoqjqr5k2eji3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

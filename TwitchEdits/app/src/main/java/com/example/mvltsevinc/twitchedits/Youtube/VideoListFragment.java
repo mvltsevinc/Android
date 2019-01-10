@@ -1,10 +1,15 @@
-package com.example.mvltsevinc.twitchedits;
+package com.example.mvltsevinc.twitchedits.Youtube;
 
 import android.app.ListFragment;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
+import com.example.mvltsevinc.twitchedits.R;
+import com.example.mvltsevinc.twitchedits.Youtube.PageAdapter;
+import com.example.mvltsevinc.twitchedits.Youtube.VideoEntry;
+import com.example.mvltsevinc.twitchedits.Youtube.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;

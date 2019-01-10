@@ -1,4 +1,4 @@
-package com.example.mvltsevinc.twitchedits;
+package com.example.mvltsevinc.twitchedits.Youtube;
 
 public class VideoEntry {
     private final String text;

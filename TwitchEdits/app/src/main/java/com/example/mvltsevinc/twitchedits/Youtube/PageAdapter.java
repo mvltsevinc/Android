@@ -1,4 +1,4 @@
-package com.example.mvltsevinc.twitchedits;
+package com.example.mvltsevinc.twitchedits.Youtube;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.mvltsevinc.twitchedits.R;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 

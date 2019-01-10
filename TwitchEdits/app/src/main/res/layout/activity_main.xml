@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:id="@+id/layout_frame">
             <fragment
-                class="com.example.mvltsevinc.twitchedits.VideoListFragment"
+                class="com.example.mvltsevinc.twitchedits.Youtube.VideoListFragment"
                 android:id="@+id/list_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -40,7 +40,7 @@
                     android:onClick="onClickClose"/>
 
                 <fragment
-                    class="com.example.mvltsevinc.twitchedits.VideoFragment"
+                    class="com.example.mvltsevinc.twitchedits.Youtube.VideoFragment"
                     android:id="@+id/video_fragment_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

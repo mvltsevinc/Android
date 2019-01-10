@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -19,11 +18,11 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.example.mvltsevinc.twitchedits.Youtube.VideoFragment;
+import com.example.mvltsevinc.twitchedits.Youtube.VideoListFragment;
 import com.google.android.youtube.player.YouTubeApiServiceUtil;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubeThumbnailLoader;
-import com.google.android.youtube.player.YouTubeThumbnailView;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -70,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements YouTubePlayer.OnF
     }
 
 
+    // Setup Bottom Navigation
     private void setupBottomNavigationView(){
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavViewBar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
