@@ -2,6 +2,7 @@ package com.example.mvltsevinc.twitchedits.Login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -26,6 +27,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class RegisterFragment extends Fragment {
     private static final String TAG = "RegisterFragment";
@@ -95,9 +98,9 @@ public class RegisterFragment extends Fragment {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mProgressBar.setVisibility(View.VISIBLE);
-                mLoadingText.setVisibility(View.VISIBLE);
-
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences("login", MODE_PRIVATE).edit();
+                editor.putString("tab", "register");
+                editor.apply();
                 email = mEmail.getText().toString();
                 username = mUsername.getText().toString();
                 password = mPassword.getText().toString();
@@ -109,6 +112,8 @@ public class RegisterFragment extends Fragment {
                 }else if(isStringNull(username)){
                     Toast.makeText(mContext, "Kullanıcı adı alanı boş geçilemez", Toast.LENGTH_SHORT).show();
                 }else{
+                    mProgressBar.setVisibility(View.VISIBLE);
+                    mLoadingText.setVisibility(View.VISIBLE);
                     firebaseMethods.registerNewEmail(email,password);
                     // username icin kontrol setupFirebaseAuth() metodunda
                 }
@@ -135,8 +140,11 @@ public class RegisterFragment extends Fragment {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
 
-                if(user != null){
+                SharedPreferences prefs = getActivity().getSharedPreferences("login", MODE_PRIVATE);
+                String tabName = prefs.getString("tab", "register");
+                if(user != null && tabName.equals("register")){
                     // user signed in   // Kayıt olduktan sonra otomatik giris yapıyor bu yuzden firebaseAuth.getCurrentUser() da user bilgisi geliyor
+                    Log.d(TAG, "onAuthStateChanged: user" + user.getEmail());
                     myRef.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -177,6 +185,14 @@ public class RegisterFragment extends Fragment {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(mAuthListener != null){
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
 

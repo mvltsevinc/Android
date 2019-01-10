@@ -71,13 +71,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/continue_without_login"
+            android:id="@+id/continue_register"
             android:text="Giriş Yapmadan Devam Et"
             android:textColor="@color/colorAccent"
             android:layout_below="@+id/layout_btn_login"
             android:textAlignment="center"
             android:layout_marginTop="16dp"
             />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/loginLoadingProgressBar"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading"
+            android:id="@+id/loginLoadingText"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:layout_below="@+id/loginLoadingProgressBar"
+            android:gravity="center"/>
 
     </RelativeLayout>
 
