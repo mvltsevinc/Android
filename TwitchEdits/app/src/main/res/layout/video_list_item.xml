@@ -25,7 +25,7 @@
             <com.google.android.youtube.player.YouTubeThumbnailView
                 android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/no_thumbnail"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>

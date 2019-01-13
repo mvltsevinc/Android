@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#7C2289"/>
+
+
+    <padding android:left="5dp"
+        android:top="1dp"
+        android:right="5dp"
+        android:bottom="1dp"
+        />
+
+    <corners
+        android:bottomRightRadius="40dp"
+        android:bottomLeftRadius="40dp"
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"/>
+</shape>
