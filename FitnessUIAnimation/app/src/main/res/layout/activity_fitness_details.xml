@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titlePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Shapes"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/subtitlePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Levels Beginners"
+        android:textAlignment="center"
+        android:textColor="#4c5067"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:lineSpacingExtra="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/titlePage"
+        app:layout_constraintStart_toStartOf="@+id/titlePage"/>
+
+    <View
+        android:id="@+id/divPage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#25293E"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintTop_toBottomOf="@+id/subtitlePage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/introPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduction"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/divPage"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/subIntroPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The text dummy could help anyone to\ndesign faster and better"
+        android:textColor="#4c5067"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:lineSpacingExtra="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/introPage"
+        app:layout_constraintStart_toStartOf="@+id/introPage"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/subIntroPage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/fitOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:src="@drawable/fit1"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/fitOneTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jump Rise"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:lineSpacingExtra="8dp" />
+
+                <TextView
+                    android:id="@+id/fitOneDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="4 to 5 Minutes"
+                    android:textColor="#4c5067"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fitTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:src="@drawable/fit1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/fitTwoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jump Rise"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:lineSpacingExtra="8dp" />
+
+                <TextView
+                    android:id="@+id/fitTwoDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="4 to 5 Minutes"
+                    android:textColor="#4c5067"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fitThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:src="@drawable/fit1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/fitThreeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jump Rise"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:lineSpacingExtra="8dp" />
+
+                <TextView
+                    android:id="@+id/fitThreeDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="4 to 5 Minutes"
+                    android:textColor="#4c5067"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fitFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:src="@drawable/fit1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/fitFourTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jump Rise"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:lineSpacingExtra="8dp" />
+
+                <TextView
+                    android:id="@+id/fitFourDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="4 to 5 Minutes"
+                    android:textColor="#4c5067"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bgProgress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#80DDD0"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/btnExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="START NOW"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
