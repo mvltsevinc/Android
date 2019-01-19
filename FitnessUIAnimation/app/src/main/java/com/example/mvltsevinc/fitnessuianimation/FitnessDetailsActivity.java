@@ -1,5 +1,6 @@
 package com.example.mvltsevinc.fitnessuianimation;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -64,6 +65,16 @@ public class FitnessDetailsActivity extends AppCompatActivity {
 
         fitOne.startAnimation(bttwo);
         fitTwo.startAnimation(bttfour);
+
+
+        btnExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),StartWorkActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setUIFonts() {
