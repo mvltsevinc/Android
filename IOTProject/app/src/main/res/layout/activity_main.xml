@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_content">
+
+        <RelativeLayout
+            android:id="@+id/rel_middle"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:background="@drawable/layout_bg_middle">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="48dp"
+                android:layout_marginStart="48dp"
+                android:background="@drawable/layout_values_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="28"
+
+                    android:textColor="@color/colorWhite"/>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_top"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/layout_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:id="@+id/txtStatistics"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="32dp"
+                android:textSize="32dp"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TODAY"
+                android:textSize="16dp"
+                android:id="@+id/txtToday"
+                android:textColor="@color/colorWhite"
+                android:padding="10dp"
+                android:layout_alignLeft="@+id/txtStatistics"
+                android:layout_below="@+id/txtStatistics"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/layout_button_bg"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" WEEK"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:padding="10dp"
+                android:layout_alignTop="@+id/txtToday"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/layout_button_bg"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" MONTH"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:padding="10dp"
+                android:layout_alignTop="@+id/txtToday"
+                android:background="@drawable/layout_button_bg"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="36dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+    
+
+
+</android.support.constraint.ConstraintLayout>
