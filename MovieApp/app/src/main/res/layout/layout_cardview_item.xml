@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="4dp"
-    app:cardElevation="2dp">
+    app:cardElevation="2dp"
+    android:id="@+id/parent_layout">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:weightSum="100">
 
         <ImageView
-            android:id="@+id/book_image"
+            android:id="@+id/movie_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="80"
@@ -22,7 +23,7 @@
             android:background="#2d2d2d"/>
 
         <TextView
-            android:id="@+id/book_title"
+            android:id="@+id/movie_title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="20"

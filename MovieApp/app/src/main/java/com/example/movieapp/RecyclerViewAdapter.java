@@ -1,77 +1,69 @@
-package com.example.recyclerview;
+package com.example.movieapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.movieapp.model.Movie;
 
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
 
-    private ArrayList<String> mImageNames = new ArrayList<String>();
-    private ArrayList<String> mImages =new ArrayList<String>();
     private Context mContext;
+    private ArrayList<Movie> mMovieList = new ArrayList<Movie>();
     private OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> mImageNames, ArrayList<String> mImages,OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
-        this.mImageNames = mImageNames;
-        this.mImages = mImages;
+    public RecyclerViewAdapter(Context mContext, ArrayList<Movie> mMovieList, OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener) {
         this.mContext = mContext;
-        this.mOnRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
+        this.mMovieList = mMovieList;
+        this.mOnRecyclerViewItemClickListener = mOnRecyclerViewItemClickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.layout_list_item,viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.layout_cardview_item,viewGroup,false);
         ViewHolder holder = new ViewHolder(view,mOnRecyclerViewItemClickListener);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder,final int i) {
-        Log.d(TAG, "onBindViewHolder: called");
-
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         // Load Images
         Glide.with(mContext)
                 .asBitmap()
-                .load(mImages.get(i))
-                .into(viewHolder.image);
+                .load(mMovieList.get(position).getThumbnail())
+                .into(viewHolder.movieImage);
 
         // Set Text
-        viewHolder.imageName.setText(mImageNames.get(i));
+        viewHolder.movieTitle.setText(mMovieList.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return mImageNames.size();
+        return mMovieList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        ImageView image;
-        TextView imageName;
-        RelativeLayout parentLayout;
+        ImageView movieImage;
+        TextView movieTitle;
+        CardView parentLayout;
         OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
 
         public ViewHolder(@NonNull View itemView, OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
             super(itemView);
-            image = itemView.findViewById(R.id.image);
-            imageName = itemView.findViewById(R.id.image_name);
+            movieImage = itemView.findViewById(R.id.movie_image);
+            movieTitle = itemView.findViewById(R.id.movie_title);
             parentLayout = itemView.findViewById(R.id.parent_layout);
             this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
 
