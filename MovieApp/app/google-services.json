@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "487488815778",
+    "firebase_url": "https://planets-4e8d4.firebaseio.com",
+    "project_id": "planets-4e8d4",
+    "storage_bucket": "planets-4e8d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487488815778:android:82287e8c52c0fee6",
+        "android_client_info": {
+          "package_name": "com.example.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487488815778-4us0pi9dvp8u0bspltobkli8n52vrl5d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.movieapp",
+            "certificate_hash": "a7be1688deacdfd0a03f04d3aee8511df73c1b84"
+          }
+        },
+        {
+          "client_id": "487488815778-5jqsv88ah9a320ukno23hcaf485i86sf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe6feIKioF7pTC0nI29tN-E9O9zEFH_X4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487488815778-5jqsv88ah9a320ukno23hcaf485i86sf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
