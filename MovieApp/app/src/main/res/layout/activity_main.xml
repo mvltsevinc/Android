@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".views.MainActivity"
     android:background="@color/colorPrimary">
 
     <android.support.v7.widget.RecyclerView
@@ -12,9 +12,7 @@
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:clipToPadding="false"
-        android:padding="@dimen/item_offset">
+        android:layout_centerInParent="true">
 
     </android.support.v7.widget.RecyclerView>
 

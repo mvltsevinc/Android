@@ -1,4 +1,4 @@
-package com.example.movieapp;
+package com.example.movieapp.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.movieapp.R;
 
 public class MovieDetailActivity extends AppCompatActivity {
     private static final String TAG = "MovieDetailActivity";
