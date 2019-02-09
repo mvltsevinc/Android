@@ -1,15 +1,15 @@
 package com.example.movieapp.models;
 
-public class Movie {
+public class Planet {
     private String title;
     private String category;
     private String description;
     private String thumbnail;
 
-    public Movie() {
+    public Planet() {
     }
 
-    public Movie(String title, String category, String description, String thumbnail) {
+    public Planet(String title, String category, String description, String thumbnail) {
         this.title = title;
         this.category = category;
         this.description = description;
@@ -50,7 +50,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
+        return "Planet{" +
                 "title='" + title + '\'' +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
-import com.example.movieapp.models.Movie;
+import com.example.movieapp.models.Planet;
 
 import java.util.ArrayList;
 
@@ -20,12 +20,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private static final String TAG = "RecyclerViewAdapter";
 
     private Context mContext;
-    private ArrayList<Movie> mMovieList = new ArrayList<Movie>();
+    private ArrayList<Planet> mPlanetList = new ArrayList<Planet>();
     private OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<Movie> mMovieList, OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener) {
+    public RecyclerViewAdapter(Context mContext, ArrayList<Planet> mPlanetList, OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener) {
         this.mContext = mContext;
-        this.mMovieList = mMovieList;
+        this.mPlanetList = mPlanetList;
         this.mOnRecyclerViewItemClickListener = mOnRecyclerViewItemClickListener;
     }
 
@@ -42,16 +42,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // Load Images
         Glide.with(mContext)
                 .asBitmap()
-                .load(mMovieList.get(position).getThumbnail())
+                .load(mPlanetList.get(position).getThumbnail())
                 .into(viewHolder.movieImage);
 
         // Set Text
-        viewHolder.movieTitle.setText(mMovieList.get(position).getTitle());
+        viewHolder.movieTitle.setText(mPlanetList.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return mMovieList.size();
+        return mPlanetList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

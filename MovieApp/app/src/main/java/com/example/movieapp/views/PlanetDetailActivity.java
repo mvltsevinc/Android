@@ -9,8 +9,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.movieapp.R;
 
-public class MovieDetailActivity extends AppCompatActivity {
-    private static final String TAG = "MovieDetailActivity";
+public class PlanetDetailActivity extends AppCompatActivity {
+    private static final String TAG = "PlanetDetailActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

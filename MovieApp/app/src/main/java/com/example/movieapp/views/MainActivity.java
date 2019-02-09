@@ -13,11 +13,10 @@ import android.util.Log;
 
 import com.example.movieapp.R;
 import com.example.movieapp.adapters.RecyclerViewAdapter;
-import com.example.movieapp.models.Movie;
+import com.example.movieapp.models.Planet;
 import com.example.movieapp.viewmodels.MainActivityViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.OnRecyclerViewItemClickListener {
     private static final String TAG = "MainActivity";
@@ -35,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         mMainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         mMainActivityViewModel.init();
-        mMainActivityViewModel.getMovies().observe(this, new Observer<ArrayList<Movie>>() {
+        mMainActivityViewModel.getPlanets().observe(this, new Observer<ArrayList<Planet>>() {
             @Override
-            public void onChanged(@Nullable ArrayList<Movie> movies) {
+            public void onChanged(@Nullable ArrayList<Planet> planets) {
                 mAdapter.notifyDataSetChanged();
             }
         });
@@ -48,16 +47,16 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     private void initRecyclerView(){
         Log.d(TAG, "initRecyclerView: init RecyclerView");
         mRecyclerView = findViewById(R.id.recycler_view);
-        mAdapter = new RecyclerViewAdapter(mContext,mMainActivityViewModel.getMovies().getValue(),this);
+        mAdapter = new RecyclerViewAdapter(mContext,mMainActivityViewModel.getPlanets().getValue(),this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
     }
 
     @Override
     public void OnRecyclerViewItemClick(int position) {
-        Intent intent = new Intent(this, MovieDetailActivity.class);
-        intent.putExtra("image_url",mMainActivityViewModel.getMovies().getValue().get(position).getThumbnail());
-        intent.putExtra("title",mMainActivityViewModel.getMovies().getValue().get(position).getTitle());
+        Intent intent = new Intent(this, PlanetDetailActivity.class);
+        intent.putExtra("image_url",mMainActivityViewModel.getPlanets().getValue().get(position).getThumbnail());
+        intent.putExtra("title",mMainActivityViewModel.getPlanets().getValue().get(position).getTitle());
         startActivity(intent);
     }
 }
