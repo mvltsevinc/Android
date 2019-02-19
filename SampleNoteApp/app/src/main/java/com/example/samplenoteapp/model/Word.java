@@ -1,4 +1,4 @@
-package com.example.samplenoteapp;
+package com.example.samplenoteapp.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

@@ -1,9 +1,11 @@
-package com.example.samplenoteapp;
+package com.example.samplenoteapp.db.dao;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+
+import com.example.samplenoteapp.model.Word;
 
 import java.util.List;
 
