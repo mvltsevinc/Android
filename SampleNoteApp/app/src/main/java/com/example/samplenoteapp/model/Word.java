@@ -11,43 +11,44 @@ public class Word {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private Integer mId;
+    private int id;
 
     @NonNull
     @ColumnInfo(name = "word")
-    private String mWord;
+    private String word;
 
     @NonNull
     @ColumnInfo(name = "date")
-    private String mDateTime;
+    private String datetime;
 
-    public Word(@NonNull Integer mId, @NonNull String mWord, @NonNull String mDateTime) {
-        this.mId = mId;
-        this.mWord = mWord;
-        this.mDateTime = mDateTime;
+    public Word(@NonNull String word, @NonNull String datetime) {
+        this.word = word;
+        this.datetime = datetime;
     }
 
-    public Integer getmId() {
-        return mId;
+    public int getId() {
+        return id;
     }
 
-    public void setmId(Integer mId) {
-        this.mId = mId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getmWord() {
-        return mWord;
+    @NonNull
+    public String getWord() {
+        return word;
     }
 
-    public void setmWord(String mWord) {
-        this.mWord = mWord;
+    public void setWord(@NonNull String word) {
+        this.word = word;
     }
 
-    public String getmDateTime() {
-        return mDateTime;
+    @NonNull
+    public String getDatetime() {
+        return datetime;
     }
 
-    public void setmDateTime(String mDateTime) {
-        this.mDateTime = mDateTime;
+    public void setDatetime(@NonNull String datetime) {
+        this.datetime = datetime;
     }
 }
