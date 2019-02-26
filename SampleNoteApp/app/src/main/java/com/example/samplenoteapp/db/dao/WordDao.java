@@ -5,6 +5,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.example.samplenoteapp.model.Word;
 
@@ -27,4 +28,7 @@ public interface WordDao {
 
     @Delete
     void deleteWord(Word word);
+
+    @Update
+    void updateWord(Word word);
 }

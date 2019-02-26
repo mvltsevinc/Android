@@ -19,9 +19,11 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     private final LayoutInflater mInflater;
     private List<Word> mWords; // Cached copy of words
+    private OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener;
 
-    public WordListAdapter(Context context) {
+    public WordListAdapter(Context context,OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
         mInflater = LayoutInflater.from(context);
+        this.mOnRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
     }
 
     public Word getWordAtPosition (int position) {
@@ -32,7 +34,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = mInflater.inflate(R.layout.recyclerview_item, viewGroup, false);
-        return new WordViewHolder(itemView);
+        return new WordViewHolder(itemView,mOnRecyclerViewItemClickListener);
     }
 
     @Override
@@ -62,13 +64,26 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         else return 0;
     }
 
-    class WordViewHolder extends RecyclerView.ViewHolder{
+    class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView wordItemView;
+        OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
 
 
-        public WordViewHolder(@NonNull View itemView) {
+        public WordViewHolder(@NonNull View itemView, OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
+
+            this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onRecyclerViewItemClickListener.OnRecyclerViewItemClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnRecyclerViewItemClickListener{
+        void OnRecyclerViewItemClick(int position);
     }
 }

@@ -14,7 +14,7 @@ import com.example.samplenoteapp.model.Word;
 
 import java.util.Calendar;
 
-@Database(entities = {Word.class}, version = 1, exportSchema = false)
+@Database(entities = {Word.class}, version = 2, exportSchema = false)
 public abstract  class WordRoomDatabase extends RoomDatabase {
     private static final String TAG = "WordRoomDatabase";
 

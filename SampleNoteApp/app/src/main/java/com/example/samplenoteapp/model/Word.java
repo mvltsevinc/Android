@@ -2,6 +2,7 @@ package com.example.samplenoteapp.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -22,6 +23,13 @@ public class Word {
     private String datetime;
 
     public Word(@NonNull String word, @NonNull String datetime) {
+        this.word = word;
+        this.datetime = datetime;
+    }
+
+    @Ignore
+    public Word(@NonNull int id,@NonNull String word, @NonNull String datetime) {
+        this.id = id;
         this.word = word;
         this.datetime = datetime;
     }
