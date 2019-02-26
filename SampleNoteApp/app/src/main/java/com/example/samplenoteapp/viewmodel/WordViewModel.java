@@ -4,7 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
-import com.example.samplenoteapp.WordRepository;
+import com.example.samplenoteapp.repo.WordRepository;
 import com.example.samplenoteapp.model.Word;
 
 import java.util.List;
@@ -20,8 +20,12 @@ public class WordViewModel extends AndroidViewModel {
         mAllWords = mRepository.getAllWords();
     }
 
+    //Get All Words
     public LiveData<List<Word>> getAllWords() { return mAllWords; }
-
+    //Insert A Word
     public void insert(Word word) { mRepository.insert(word); }
-
+    //Delete All Words
+    public void deleteAll(){
+        mRepository.deleteAll();
+    }
 }

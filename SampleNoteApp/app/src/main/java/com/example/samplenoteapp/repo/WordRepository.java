@@ -1,4 +1,4 @@
-package com.example.samplenoteapp;
+package com.example.samplenoteapp.repo;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
@@ -21,15 +21,16 @@ public class WordRepository {
         mAllWords = mWordDao.getAllWords();
     }
 
+    //region Get Method
     public LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
+    //endregion
 
+    //region Insert Method
     public void insert (Word word) {
         new insertAsyncTask(mWordDao).execute(word);
     }
-
-
 
     private static class insertAsyncTask extends AsyncTask<Word, Void, Void> {
 
@@ -45,4 +46,25 @@ public class WordRepository {
             return null;
         }
     }
+    //endregion
+
+    //region Delete Method
+    public void deleteAll(){
+        new deleteAllWordsAsyncTask(mWordDao).execute();
+    }
+
+    private static class deleteAllWordsAsyncTask extends AsyncTask<Void, Void, Void> {
+        private WordDao mAsyncTaskDao;
+
+        deleteAllWordsAsyncTask(WordDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            mAsyncTaskDao.deleteAll();
+            return null;
+        }
+    }
+    //endregion
 }
