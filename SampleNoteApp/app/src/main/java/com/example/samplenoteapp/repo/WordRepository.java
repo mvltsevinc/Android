@@ -49,6 +49,26 @@ public class WordRepository {
     //endregion
 
     //region Delete Method
+    public void deleteWord(Word word)  {
+        new deleteWordAsyncTask(mWordDao).execute(word);
+    }
+
+    private static class deleteWordAsyncTask extends AsyncTask<Word, Void, Void> {
+        private WordDao mAsyncTaskDao;
+
+        deleteWordAsyncTask(WordDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Word... params) {
+            mAsyncTaskDao.deleteWord(params[0]);
+            return null;
+        }
+    }
+    //endregion
+
+    //region Delete All Method
     public void deleteAll(){
         new deleteAllWordsAsyncTask(mWordDao).execute();
     }

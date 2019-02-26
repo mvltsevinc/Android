@@ -22,8 +22,13 @@ public class WordViewModel extends AndroidViewModel {
 
     //Get All Words
     public LiveData<List<Word>> getAllWords() { return mAllWords; }
+
     //Insert A Word
     public void insert(Word word) { mRepository.insert(word); }
+
+    //Delete A Word
+    public void deleteWord(Word word) {mRepository.deleteWord(word);}
+
     //Delete All Words
     public void deleteAll(){
         mRepository.deleteAll();
