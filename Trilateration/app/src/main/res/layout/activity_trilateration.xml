@@ -6,158 +6,230 @@
     android:layout_height="match_parent"
     tools:context=".Trilateration">
 
-    <TextView
-        android:id="@+id/txtWifi"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:text="Wifi Adı"
-        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp">
 
-    <TextView
-        android:id="@+id/txtX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:text="X"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/txtWifi"
-        app:layout_constraintTop_toTopOf="@+id/txtWifi" />
+     <android.support.constraint.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="16dp">
 
-    <TextView
-        android:id="@+id/txtY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:text="Y"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/txtX"
-        app:layout_constraintTop_toTopOf="@+id/txtWifi" />
+         <TextView
+             android:id="@+id/txtWifiName1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="8dp"
+             android:layout_marginEnd="8dp"
+             android:text="WifiName1"
+             android:textAlignment="center"
+             android:textSize="18sp"
+             android:textColor="@android:color/black"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtWifiName1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="10dp"
-        android:text="WifiName1"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/txtWifi"
-        app:layout_constraintBottom_toBottomOf="@id/txtWifi1X" />
+         <EditText
+             android:id="@+id/txtWifi1X"
+             android:layout_width="85dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="8dp"
+             android:inputType="numberDecimal"
+             android:hint="X"
+             android:textAlignment="center"
+             app:layout_constraintEnd_toStartOf="@+id/txtWifi1Y"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/txtWifiName1" />
 
-    <EditText
-        android:id="@+id/txtWifi1X"
-        android:layout_width="85dp"
+         <EditText
+             android:id="@+id/txtWifi1Y"
+             android:layout_width="81dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="8dp"
+             android:inputType="numberDecimal"
+             android:hint="Y"
+             android:textAlignment="center"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/txtWifi1X"
+             app:layout_constraintTop_toBottomOf="@+id/txtWifiName1" />
+
+     </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtX"
-        app:layout_constraintTop_toBottomOf="@+id/txtX" />
+        app:layout_constraintTop_toBottomOf="@id/cardView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp">
 
-    <EditText
-        android:id="@+id/txtWifi1Y"
-        android:layout_width="85dp"
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtWifiName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="WifiName2"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/txtWifi2X"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:hint="X"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/txtWifi2Y"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWifiName2" />
+
+            <EditText
+                android:id="@+id/txtWifi2Y"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:hint="Y"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtWifi2X"
+                app:layout_constraintTop_toBottomOf="@+id/txtWifiName2" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtY"
-        app:layout_constraintTop_toBottomOf="@+id/txtY" />
+        app:layout_constraintTop_toBottomOf="@id/cardView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp">
 
-    <TextView
-        android:id="@+id/txtWifiName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WifiName2"
-        android:layout_marginBottom="10dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/txtWifi"
-        app:layout_constraintBottom_toBottomOf="@id/txtWifi2X"
-        />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <EditText
-        android:id="@+id/txtWifi2X"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtX"
-        app:layout_constraintTop_toBottomOf="@+id/txtWifi1X" />
+            <TextView
+                android:id="@+id/txtWifiName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="WifiName3"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtWifi2Y"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtY"
-        app:layout_constraintTop_toBottomOf="@+id/txtWifi1Y" />
+            <EditText
+                android:id="@+id/txtWifi3X"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:hint="X"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/txtWifi3Y"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWifiName3" />
 
-    <TextView
-        android:id="@+id/txtWifiName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="10dp"
-        android:text="WifiName3"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/txtWifi"
-        app:layout_constraintBottom_toBottomOf="@id/txtWifi3X" />
+            <EditText
+                android:id="@+id/txtWifi3Y"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:hint="Y"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtWifi3X"
+                app:layout_constraintTop_toBottomOf="@+id/txtWifiName3" />
 
-    <EditText
-        android:id="@+id/txtWifi3X"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtX"
-        app:layout_constraintTop_toBottomOf="@+id/txtWifi2X" />
+        </android.support.constraint.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/txtWifi3Y"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="@+id/txtY"
-        app:layout_constraintTop_toBottomOf="@+id/txtWifi2Y" />
+    </android.support.v7.widget.CardView>
 
     <Button
         android:id="@+id/btnHesapla"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hesapla"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@id/txtWifi"
-        app:layout_constraintTop_toBottomOf="@id/txtWifi3X"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hesapla"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView3"/>
 
     <TextView
         android:id="@+id/txtResultTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Sonuc:"
         android:textSize="24sp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnHesapla"
-        app:layout_constraintStart_toEndOf="@id/btnHesapla"
-        app:layout_constraintTop_toTopOf="@+id/btnHesapla" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHesapla" />
 
     <TextView
         android:id="@+id/txtResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/txtResultTitle"
-        app:layout_constraintTop_toTopOf="@+id/btnHesapla"
-        app:layout_constraintBottom_toBottomOf="@+id/btnHesapla"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnHesapla" />
+
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>
