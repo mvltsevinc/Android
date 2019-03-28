@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
 import com.lemmingapex.trilateration.NonLinearLeastSquaresSolver;
 import com.lemmingapex.trilateration.TrilaterationFunction;
 
@@ -96,7 +98,22 @@ public class Trilateration extends AppCompatActivity {
 
                 // the answer
                 double[] centroid = optimum.getPoint().toArray();
-                txtResult.setText(centroid[0] + " , " + centroid[1]);
+
+                new TTFancyGifDialog.Builder(Trilateration.this)
+                        .setTitle("Your Location")
+                        .setMessage("("+ centroid[0]+","+centroid[1]+")")
+                        .setPositiveBtnText("OK")
+                        .setPositiveBtnBackground("#22b573")
+                        .setGifResource(R.drawable.mapslocation)      //pass your gif, png or jpg
+                        .isCancellable(true)
+                        .OnPositiveClicked(new TTFancyGifDialogListener() {
+                            @Override
+                            public void OnClick() {
+                            }
+                        })
+                        .build();
+
+                //txtResult.setText(centroid[0] + " , " + centroid[1]);
                 //Toast.makeText(this, ""+ centroid[0] + "  " + centroid[1], Toast.LENGTH_LONG).show();
             }
         });
