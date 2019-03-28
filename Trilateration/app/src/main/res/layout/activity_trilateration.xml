@@ -7,99 +7,157 @@
     tools:context=".Trilateration">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtWifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:text="Wifi Adı"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginStart="55dp"
+        android:text="X"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/txtWifi"
+        app:layout_constraintTop_toTopOf="@+id/txtWifi" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:text="Y"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/txtX"
+        app:layout_constraintTop_toTopOf="@+id/txtWifi" />
+
+    <TextView
+        android:id="@+id/txtWifiName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="10dp"
+        android:text="WifiName1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtWifi"
+        app:layout_constraintBottom_toBottomOf="@id/txtWifi1X" />
+
+    <EditText
+        android:id="@+id/txtWifi1X"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtX"
+        app:layout_constraintTop_toBottomOf="@+id/txtX" />
+
+    <EditText
+        android:id="@+id/txtWifi1Y"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtY"
+        app:layout_constraintTop_toBottomOf="@+id/txtY" />
+
+    <TextView
+        android:id="@+id/txtWifiName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WifiName2"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtWifi"
+        app:layout_constraintBottom_toBottomOf="@id/txtWifi2X"
+        />
+
+    <EditText
+        android:id="@+id/txtWifi2X"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtX"
+        app:layout_constraintTop_toBottomOf="@+id/txtWifi1X" />
+
+    <EditText
+        android:id="@+id/txtWifi2Y"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtY"
+        app:layout_constraintTop_toBottomOf="@+id/txtWifi1Y" />
+
+    <TextView
+        android:id="@+id/txtWifiName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="10dp"
+        android:text="WifiName3"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtWifi"
+        app:layout_constraintBottom_toBottomOf="@id/txtWifi3X" />
+
+    <EditText
+        android:id="@+id/txtWifi3X"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtX"
+        app:layout_constraintTop_toBottomOf="@+id/txtWifi2X" />
+
+    <EditText
+        android:id="@+id/txtWifi3Y"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtY"
+        app:layout_constraintTop_toBottomOf="@+id/txtWifi2Y" />
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hesapla"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/txtWifi"
+        app:layout_constraintTop_toBottomOf="@id/txtWifi3X"/>
+
+    <TextView
+        android:id="@+id/txtResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sonuc:"
+        android:textSize="24sp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnHesapla"
+        app:layout_constraintStart_toEndOf="@id/btnHesapla"
+        app:layout_constraintTop_toTopOf="@+id/btnHesapla" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="61dp"
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/txtResultTitle"
+        app:layout_constraintTop_toTopOf="@+id/btnHesapla"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHesapla"/>
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="62dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="9dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="61dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="9dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="11dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="62dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="11dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 </android.support.constraint.ConstraintLayout>
