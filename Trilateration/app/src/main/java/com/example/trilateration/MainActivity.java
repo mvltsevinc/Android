@@ -86,8 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         selectedResults.add(results.get(i));
                         if (selectedResults.size() == 3) {
                             buttonCalc.setEnabled(true);
+                            buttonCalc.setBackgroundColor(getColor(R.color.colorPrimary));
                         } else {
                             buttonCalc.setEnabled(false);
+                            buttonCalc.setBackgroundColor(getColor(R.color.Gray));
                         }
                     }
                 }
