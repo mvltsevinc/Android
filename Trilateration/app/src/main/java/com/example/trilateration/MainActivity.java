@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonScan = (Button) findViewById(R.id.buttonScan);
         buttonScan.setOnClickListener(this);
         buttonCalc = (Button) findViewById(R.id.buttonCalc);
+        buttonCalc.setEnabled(false);
         listViewWifi = (ListView)findViewById(R.id.list);
 
         selectedResults = new ArrayList<>();
@@ -83,6 +84,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (checkedItemPositions.get(key)) {
                         selectedResults.add(results.get(i));
+                        if (selectedResults.size() == 3) {
+                            buttonCalc.setEnabled(true);
+                        } else {
+                            buttonCalc.setEnabled(false);
+                        }
                     }
                 }
             }
