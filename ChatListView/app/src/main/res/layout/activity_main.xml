@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:src="@drawable/ic_curvebacks_01"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/txt_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M E S S A G E"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"/>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/txt_message"
+        android:id="@+id/search_bar"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_xxlarge"
+        android:layout_gravity="bottom"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:layout_collapseMode="pin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/spacing_xxlarge"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:tint="#666666"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Search Locations"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+
+                android:singleLine="true">
+
+                <requestFocus />
+
+            </EditText>
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/search_bar"
+        android:id="@+id/recent_cardView"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:layout_collapseMode="pin">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+        <ListView
+            android:id="@+id/mylist"
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#18000000"
+            android:dividerHeight="1dp">
+        </ListView>
+
+</LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
